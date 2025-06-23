@@ -3,389 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Amit Garg</title>
+    <meta name="description" content="Amit Garg's professional portfolio. Full-stack developer, competitive programmer, and technology enthusiast.">
+    <meta name="keywords" content="Amit Garg, Portfolio, Full-stack Developer, Competitive Programming, DSA, React, Node.js, MERN, Web Developer">
+    <meta name="author" content="Amit Garg">
+    <title>Amit Garg | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <style>
-     :root {
-    --primary: #00e5ff;
-    --primary-dark: #00b8d4;
-    --secondary: #7c4dff;
-    --text: #e0e0e0;
-    --dark-bg: #121212;
-    --card-bg: #1e1e1e;
-    --nav-bg: rgba(18, 18, 18, 0.95);
-    --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    --card-hover: #2d2d2d;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text);
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 4rem;
-}
-
-/* Navbar Styles */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--nav-bg);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: none;
-}
-
-.nav-logo-full {
-    display: block;
-}
-
-.nav-logo-short {
-    display: none;
-}
-
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-    transition: all 0.3s;
-    opacity: 0.8;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.nav-links a:hover {
-    opacity: 1;
-    color: var(--primary);
-}
-
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background: var(--dark-bg);
-    padding-top: 80px;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 30%, var(--primary-dark) 0%, transparent 70%),
-        radial-gradient(circle at 80% 70%, var(--secondary) 0%, transparent 70%);
-    opacity: 0.1;
-    filter: blur(60px);
-}
-
-.hero-content {
-    max-width: 800px;
-    z-index: 1;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.hero-title {
-    font-size: 4.5rem;
-    margin-bottom: 1rem;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 800;
-}
-
-.typed-text {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    color: var(--text);
-    opacity: 0.9;
-}
-
-/* Section Styles */
-section {
-    padding: 5rem 0;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    padding-bottom: 1rem;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: var(--gradient);
-    border-radius: 2px;
-}
-
-/* Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-}
-
-.skill-item {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    margin: 10px;
-    border-radius: 12px;
-    transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-}
-
-.skill-item:hover {
-    transform: translateY(-5px);
-    background: var(--card-hover);
-    border-color: var(--primary);
-    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.1);
-}
-
-/* Timeline Styles */
-.timeline-item {
-    border-left: 3px solid var(--primary);
-    position: relative;
-    padding: 30px;
-    background: var(--card-bg);
-    border-radius: 0 12px 12px 0;
-    margin: 0 1rem 20px 1rem;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 24px;
-    width: 13px;
-    height: 13px;
-    background: var(--primary);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--primary);
-}
-
-/* Projects Section */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
-}
-
-.project-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    margin: 10px;
-    padding: 1.5rem;
-    transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    background: var(--card-hover);
-    border-color: var(--primary);
-    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.1);
-}
-
-/* Contact Section */
-.contact-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: var(--card-bg);
-    border-radius: 12px;
-    transition: all 0.3s;
-    text-decoration: none;
-    color: var(--text);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.contact-item:hover {
-    transform: translateY(-5px);
-    background: var(--card-hover);
-    border-color: var(--primary);
-}
-
-.contact-item i {
-    font-size: 1.5rem;
-    color: var(--primary);
-}
-
-/* Scroll Top Button */
-.scroll-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background: var(--gradient);
-    color: white;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 0.3s;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
-}
-
-.scroll-top.visible {
-    opacity: 1;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
-    }
-
-    .nav-logo-full {
-        display: none;
-    }
-
-    .nav-logo-short {
-        display: block;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-        position: relative;
-        z-index: 1001;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--nav-bg);
-        padding: 1rem 2rem;
-        flex-direction: column;
-        gap: 1rem;
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(-1rem);
-        transition: all 0.3s ease;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-links.active {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .typed-text {
-        font-size: 1.4rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .timeline-item {
-        margin: 0 0 20px 0;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .container {
-        padding: 0 2rem;
-    }
-}
-    </style>
 </head>
 <body>
-     <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="#" class="nav-logo">
+            <a href="#" class="nav-logo" aria-label="Home">
                 <span class="nav-logo-full">Amit Garg</span>
                 <span class="nav-logo-short">AG</span>
             </a>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links">
@@ -393,209 +29,205 @@ section {
                 <li><a href="#experience"><i class="fas fa-briefcase"></i> <span>Experience</span></a></li>
                 <li><a href="#education"><i class="fas fa-graduation-cap"></i> <span>Education</span></a></li>
                 <li><a href="#projects"><i class="fas fa-code-branch"></i> <span>Projects</span></a></li>
+                <li><a href="#certificates"><i class="fas fa-certificate"></i> <span>Certificates</span></a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
 
-
-    <section class="hero">
+    <section class="hero" aria-label="Introduction">
         <div class="container hero-content">
             <h1 class="hero-title">Amit Garg</h1>
             <div class="typed-text"></div>
         </div>
     </section>
 
-    
-    <section id="skills">
+    <section id="skills" aria-label="Skills">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>C</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>C++</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>Data Structures</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>Algorithms</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>Object-Oriented Programming</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>HTML</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>CSS</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>JavaScript</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>React</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>Node.js</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>Express.js</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>REST APIs</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>MySQL</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>MongoDB</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>Git</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>GitHub</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>VS Code</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>Teamwork</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>Resilience</h3>
-                    </div>
-                
-                    <div class="skill-item" data-aos="fade-up">
-                        <h3>Flexibility</h3>
-                    </div>
-                
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-c-plain skill-icon" title="C"></i><h3>C</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-cplusplus-plain skill-icon" title="C++"></i><h3>C++</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="fas fa-database skill-icon" title="Data Structures"></i><h3>Data Structures</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="fas fa-cogs skill-icon" title="Algorithms"></i><h3>Algorithms</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="fas fa-object-group skill-icon" title="OOP"></i><h3>OOP</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-html5-plain skill-icon" title="HTML"></i><h3>HTML</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-css3-plain skill-icon" title="CSS"></i><h3>CSS</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-javascript-plain skill-icon" title="JavaScript"></i><h3>JavaScript</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-react-original skill-icon" title="React"></i><h3>React</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-nodejs-plain skill-icon" title="Node.js"></i><h3>Node.js</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-express-original skill-icon" title="Express.js"></i><h3>Express.js</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="fas fa-exchange-alt skill-icon" title="REST APIs"></i><h3>REST APIs</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-mysql-plain skill-icon" title="MySQL"></i><h3>MySQL</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-mongodb-plain skill-icon" title="MongoDB"></i><h3>MongoDB</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-git-plain skill-icon" title="Git"></i><h3>Git</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-github-original skill-icon" title="GitHub"></i><h3>GitHub</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="devicon-visualstudio-plain skill-icon" title="VS Code"></i><h3>VS Code</h3></div>
+                <div class="skill-item" data-aos="fade-up"><i class="fas fa-users skill-icon" title="Teamwork"></i><h3>Teamwork</h3></div>
             </div>
         </div>
     </section>
-    
 
-    <!-- Rest of your sections remain the same -->
-    
-    <section id="experience">
+    <section id="experience" aria-label="Volunteer Experience">
         <div class="container">
-            <h2 class="section-title">Work Experience</h2>
+            <h2 class="section-title">Volunteer Experience</h2>
             <div class="timeline">
-                
-                    <div class="timeline-item" data-aos="fade-left">
-                        <h3>Core Team Member at IEEE-MANIT Student Branch</h3>
-                        <p>Aug 2024 - Dec 2024</p>
-                        <ul>
-                            <li>Collaborated with a cross-functional team of 10+ members, emphasizing teamwork and coordination to plan and execute AARAMBH-24.</li><li>Mentored 75+ students, boosting event engagement by 20% and fostering professional development.</li><li>Led interactive science experiments that sparked curiosity and promoted hands-on STEM learning.</li>
-                        </ul>
-                    </div>
-                
+                <div class="timeline-item" data-aos="fade-left">
+                    <h3>Core Team Member, IEEE-MANIT Student Branch</h3>
+                    <p>Aug 2024 - Dec 2024 | Bhopal, India</p>
+                    <ul>
+                        <li>Led a 10+ member team to successfully organize AARAMBH-24, driving seamless event execution and collaboration.</li>
+                        <li>Mentored 75+ students, boosting engagement by 20% through interactive workshops and personalized guidance.</li>
+                        <li>Designed and delivered hands-on STEM experiments, inspiring innovation and practical learning.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
-    
 
-    
-    <section id="education">
+    <section id="education" aria-label="Education">
         <div class="container">
             <h2 class="section-title">Education</h2>
             <div class="timeline">
-                
-                    <div class="timeline-item" data-aos="fade-right">
-                        <h3>B.Tech in Computer Science and Engineering</h3>
-                        <p>Maulana Azad National Institute of Technology, Bhopal</p>
-                        <p>Aug 2023 - Present</p>
-                        <p>GPA: 9.40/10.00</p>
-                    </div>
-                
+                <div class="timeline-item" data-aos="fade-right">
+                    <h3>Maulana Azad National Institute of Technology, Bhopal</h3>
+                    <p>B.Tech, Computer Science and Engineering</p>
+                    <p>Aug 2023 - Present | CGPA: 9.04/10.00</p>
+                    <p>Key Courses: C Programming, Data Structures, Database Management, Algorithms, OOP</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <h3>Shiv Jyoti Convent School</h3>
+                    <p>Kota, Rajasthan</p>
+                    <p>Class 12th: 96% | Class 10th: 94.6%</p>
+                </div>
             </div>
         </div>
     </section>
-    
 
-    
-    <section id="projects">
+    <section id="projects" aria-label="Projects">
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
-                
-                    <div class="project-card" data-aos="fade-up">
-                        <h3>StackStories - Full Stack Blogging Platform</h3>
-                        <p>Developed a full-stack blogging platform using MongoDB, Express.js, React, and Node.js with JWT-based authentication, reducing login errors by 15%. Enabled CRUD functionality for blog posts, improving user engagement by 20%. Deployed a responsive design adaptable across desktop and mobile devices.</p>
-                        <div class="technologies">
-                            <span>MongoDB</span>, <span>Express.js</span>, <span>React</span>, <span>Node.js</span>, <span>JWT</span>
-                        </div>
+                <div class="project-card" data-aos="fade-up">
+                    <h3>StackStories - Blogging Platform</h3>
+                    <p>Developed a secure, full-stack blogging platform (MERN stack) with JWT authentication. Enhanced user engagement by 20% through intuitive CRUD features and responsive design.</p>
+                    <div class="technologies">
+                        <span>MongoDB</span><span>Express.js</span><span>React</span><span>Node.js</span><span>JWT</span>
                     </div>
-                
-                    <div class="project-card" data-aos="fade-up">
-                        <h3>JobVerse - Interactive Job Portal</h3>
-                        <p>Built an interactive job portal using HTML, CSS, and JavaScript, integrating third-party APIs for 100+ real-time job listings. Implemented filters by location, industry, and job type, enhancing search efficiency by 30%. Streamlined application process with direct submission features.</p>
-                        <div class="technologies">
-                            <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>, <span>Third-party APIs</span>
-                        </div>
+                    <div class="project-links">
+                        <a href="https://mystackstories.onrender.com/" target="_blank" aria-label="View StackStories Live Demo">Live Demo</a>
+                        <a href="https://github.com/AmitGarg1207/StackStories" target="_blank" aria-label="View StackStories GitHub Repository">GitHub</a>
                     </div>
-                
-                    <div class="project-card" data-aos="fade-up">
-                        <h3>Bank Management System</h3>
-                        <p>Developed a bank management simulation in C++ using object-oriented programming. Implemented file handling for persistent storage of customer records and transactions. Simulated core banking operations (deposits, withdrawals, transfers) to create a realistic environment.</p>
-                        <div class="technologies">
-                            <span>C++</span>, <span>Object-Oriented Programming</span>
-                        </div>
+                </div>
+                <div class="project-card" data-aos="fade-up">
+                    <h3>JobVerse - Job Portal</h3>
+                    <p>Built a dynamic job portal integrating real-time listings via third-party APIs. Improved search efficiency by 30% with advanced filters and streamlined application workflows.</p>
+                    <div class="technologies">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>APIs</span>
                     </div>
-                
+                    <div class="project-links">
+                        <a href="https://job-ventures.vercel.app/" target="_blank" aria-label="View JobVerse Live Demo">Live Demo</a>
+                        <a href="https://github.com/AmitGarg1207/JobVerse" target="_blank" aria-label="View JobVerse GitHub Repository">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up">
+                    <h3>Bank Management System</h3>
+                    <p>Engineered a C++ banking simulation using OOP and file handling for persistent storage, enabling efficient management of customer records and transactions.</p>
+                    <div class="technologies">
+                        <span>C++</span><span>OOP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/AmitGarg1207/Bank-Management-System-/blob/main/newProject.cpp" target="_blank" aria-label="View Bank Management System GitHub Repository">GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
 
-    <section id="contact">
+    <section id="certificates" aria-label="Achievements and Certificates">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-container">
-                
-                    <a href="mailto:amitgarg7062@gmail.com" class="contact-item" data-aos="fade-up">
-                        <i class="fas fa-envelope"></i>
-                        <span>amitgarg7062@gmail.com</span>
-                    </a>
-                
-                
-                    <div class="contact-item" data-aos="fade-up">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 9257272651</span>
-                    </div>
-                
-                
-                
+            <h2 class="section-title">Achievements & Certificates</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card" data-aos="fade-up">
+                    <h3>DSA Problem Solving</h3>
+                    <p>Demonstrated advanced problem-solving skills by solving 400+ Data Structures & Algorithms problems across leading platforms.</p>
+                </div>
+                <div class="certificate-card" data-aos="fade-up">
+                    <h3>HackerRank Problem Solving</h3>
+                    <p>Certified for proficiency in algorithmic problem-solving and logical reasoning.</p>
+                    <a href="https://www.hackerrank.com/certificates/iframe/611cf8672a61" target="_blank" aria-label="View HackerRank Problem Solving Certificate">View Certificate</a>
+                </div>
+                <div class="certificate-card" data-aos="fade-up">
+                    <h3>HackerRank SQL</h3>
+                    <p>Certified in SQL for advanced database querying and management.</p>
+                    <a href="https://www.hackerrank.com/certificates/iframe/6b2c3a52f34c" target="_blank" aria-label="View HackerRank SQL Certificate">View Certificate</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="scroll-top">↑</div>
+    <section id="contact" aria-label="Contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-container">
+                <a href="mailto:amitgarg7062@gmail.com" class="contact-item" data-aos="fade-up">
+                    <i class="fas fa-envelope"></i>
+                    <span>amitgarg7062@gmail.com</span>
+                </a>
+                <a href="tel:+919257272651" class="contact-item" data-aos="fade-up">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 9257272651</span>
+                </a>
+                <a href="https://linkedin.com/in/amit-garg-439400280" class="contact-item" data-aos="fade-up" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/AmitGarg1207" class="contact-item" data-aos="fade-up" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+            <form class="contact-form" data-aos="fade-up" aria-label="Contact Form" action="https://formspree.io/f/xeokrprn" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
+                <input type="email" name="email" placeholder="Your Email" required aria-label="Email">
+                <textarea name="message" placeholder="Your Message" rows="5" required aria-label="Message"></textarea>
+                <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+                <div style="display:none">
+                    <input type="text" name="_gotcha">
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="scroll-top" role="button" aria-label="Scroll to top">↑</div>
 
     <script>
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const body = document.body;
 
+        function setTheme(theme) {
+            body.classList.toggle('light', theme === 'light');
+            themeToggle.innerHTML = theme === 'light' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.classList.contains('light') ? 'dark' : 'light';
+            setTheme(currentTheme);
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
+
+        // Mobile Menu
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
         let isMenuOpen = false;
@@ -623,52 +255,42 @@ section {
             toggleMenu();
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.nav-container')) {
                 closeMenu();
             }
         });
 
-        // Close menu when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                closeMenu();
-            });
+            link.addEventListener('click', closeMenu);
         });
 
+        // Typed.js
+        new Typed('.typed-text', {
+            strings: ['Competitive programmer and full-stack developer skilled in crafting efficient algorithms and scalable web applications with the MERN stack. Committed to driving innovation in technology.'],
+            typeSpeed: 30,
+            backSpeed: 30,
+            loop: false
+        });
 
-        // Initialize Typed.js
-        if (true) {
-            new Typed('.typed-text', {
-                strings: ['Hello, I am Amit Garg, a highly motivated and skilled computer science graduate with expertise in full-stack development, data structures and algorithms, and database management.  I have a proven track record of successfully completing challenging projects and exceeding expectations in team environments.'],
-                typeSpeed:  30,
-                backSpeed: 30,
-                loop: false
-            });
-        }
-
-        // Initialize AOS
+        // AOS Initialization
         AOS.init({
             duration: 1000,
-            once: true
+            once: true,
+            easing: 'ease-out'
         });
 
-        // Scroll to top functionality
+        // Scroll to Top
         const scrollTop = document.querySelector('.scroll-top');
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) {
-                scrollTop.classList.add('visible');
-            } else {
-                scrollTop.classList.remove('visible');
-            }
+            scrollTop.classList.toggle('visible', window.pageYOffset > 100);
         });
 
         scrollTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Smooth scroll for navigation links
+        // Smooth Scroll for Navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -676,6 +298,25 @@ section {
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Contact Form Reset after submission
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Reset form after submission
+            setTimeout(() => {
+                contactForm.reset();
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                alert('Thank you for your message! I will get back to you soon.');
+            }, 2000);
         });
     </script>
 </body>
